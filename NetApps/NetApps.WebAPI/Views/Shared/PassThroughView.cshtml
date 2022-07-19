@@ -1,0 +1,37 @@
+﻿@model string
+@{
+    var vData = MyViewData.Prep(this);
+
+    //throw new Exception("layout=" + Layout);
+    //if (Layout == null)
+    //{
+    //    //never null, set in _ViewStart:    Layout = "~/Views/Shared/_Layout.cshtml";
+    //    //Layout = "~/Views/Shared/_LayoutWhoWeAre.cshtml";
+    //    //Layout = "~/Views/Shared/_LayoutBgH1.cshtml";  //Setting Layout in Controller action will override this.
+    //}
+    if (vData.MasterPage != null)
+    {
+        Layout = vData.MasterPage;
+    }
+
+    //if (ViewBag.Title == null)
+    //{
+    //    //ViewBag.Title = "Doing Business";
+    //}
+
+    //if (ViewBag.Description == null)
+    //{
+    //    //ViewBag.Description = "Clark County Department of Aviation";
+    //}
+
+    //if (ViewBag.H1 == null)
+    //{
+    //    //ViewBag.H1 = "Clark County Department of Aviation";
+    //}
+}
+<!--PassthroughView-->
+@*<br class="clear" />*@
+@*<div>
+</div>*@
+@Html.Raw(Model)
+

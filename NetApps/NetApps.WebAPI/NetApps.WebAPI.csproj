@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptTarget>ESNext</TypeScriptTarget>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptTarget>ESNext</TypeScriptTarget>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+    <EnableNETAnalyzers>False</EnableNETAnalyzers>
+    <RootNamespace>Ccdoa</RootNamespace>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Ccdoa.WebAPI</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\Laf-Prod-vhpweb01-8048.pubxml" />
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\Laf-Prod-vhpweb02-8048.pubxml" />
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\Laf-Test-vhdweb06-5048.pubxml" />
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\LocalHost_NetApps.pubxml" />
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\NetApps-Test-vhdweb06-4141.pubxml" />
+    <_WebToolingArtifacts Remove="Properties\PublishProfiles\RE-prod-vhiweb04-44359.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetApps.Common\NetApps.Common.csproj" />
+    <ProjectReference Include="..\NetApps.MvcLib\NetApps.MvcLib.csproj" />
+  </ItemGroup>
+
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>
